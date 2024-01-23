@@ -10,7 +10,7 @@ const CllImage =(props:any )=>{
         <div>
             <ForceRefresh/>
             
-                <div className='relative'>
+                <div className='relative break-inside-auto""break-inside-auto'>
                     <div >
                     <CldImage
                     {...props}

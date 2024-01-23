@@ -44,7 +44,7 @@ export default function RootLayout({
       </div>
     </nav>
         {children}
-        </body>
+        </body >
     </html>
   )
 }

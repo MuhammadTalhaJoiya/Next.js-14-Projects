@@ -21,9 +21,8 @@ export const CloudinaryFav=async (publicid1:string,tagfav:boolean,path:string)=>
     // revalidatePath(path)
 
 }
-export const uploadserverimage=()=>{setTimeout(() => {
-    const router= useRouter()
-
-    router.refresh()
-      
-    }, 3000)};
+export const uploadserverimage= async()=>{
+    await new Promise((res)=>{
+        setTimeout(res, 1000);
+    })
+}
