@@ -22,7 +22,15 @@ export const CloudinaryFav=async (publicid1:string,tagfav:boolean,path:string)=>
 
 }
 export const uploadserverimage= async()=>{
-    await new Promise((res)=>{
-        setTimeout(res, 1000);
-    })
+
+    await new Promise((resolve)=>{setTimeout(resolve,3000)})
+
+
+}
+
+export const addlocationofimage=async(image:string,addAlbum:string)=>{
+    const existingfolder=await cloudinary.v2.api.create_folder(addAlbum);
+    await cloudinary.v2.uploader.rename(
+        image,`${addAlbum}/${image}`
+    )
 }
