@@ -5,10 +5,11 @@ import { v2 } from 'cloudinary';
 import CllImage from "../Gallery/Cllmage";
 import Link from "next/link";
 import Sidebar from "./sidebar";
-import Addtoalbum from "./addtoalbum";
+// import Addtoalbum from "./addtoalbum";
 import ForceRefresh from "@/components/ui/force-refresh";
-import { useEffect } from "react";
-import { useRouter } from "next/navigation";
+// import { useEffect } from "react";
+// import { useRouter } from "next/navigation";
+
 const Favourite=async()=>{
     const results =await cloudinary.v2.search
   .expression('resource_type:image')
@@ -22,8 +23,8 @@ const Favourite=async()=>{
   // console.log(results.resources.public_id)
   
     return(
-      <div>
-              <div className="flex h-screen">
+      <div className='bg-black text-white h-full'>
+              <div className="flex ">
 
 <Sidebar/>
    {/* <hr /> */}
@@ -32,16 +33,19 @@ const Favourite=async()=>{
         <h1 className="text-2xl font-bold">Gallery</h1>
         <Buttonupload />
     </div>
-    <div className="columns-3 space-y-2 gap-3 mx-auto p-3">
-    {results.resources.map((val:any)=>{
-      return <CllImage  key={val.public_id} src={val.public_id} width={val.width} height={val.height} publicid={val.public_id} tag={val.tags[0]}  path="/" /> 
-    })}
-  </div>
+      <div className="columns-3 space-y-2 gap-3 mx-auto p-3">
+        
+        {results.resources.map((val:any)=>{
+          return <CllImage  key={val.public_id} src={val.public_id} width={val.width} height={val.height} publicid={val.public_id} tag={val.tags[0]}  path="/" /> 
+        })}
+      </div>
+    
     
     
   </div>
   
   </div>
+
       </div>
         
     )

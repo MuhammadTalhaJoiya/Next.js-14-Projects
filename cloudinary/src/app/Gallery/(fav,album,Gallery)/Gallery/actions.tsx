@@ -1,7 +1,5 @@
 'use server'
 import cloudinary from "cloudinary";
-import { revalidatePath } from "next/cache";
-import { useRouter } from "next/navigation";
 
 export const CloudinaryFav=async (publicid1:string,tagfav:boolean,path:string)=>{
     if(tagfav){
@@ -21,12 +19,7 @@ export const CloudinaryFav=async (publicid1:string,tagfav:boolean,path:string)=>
     // revalidatePath(path)
 
 }
-export const uploadserverimage= async()=>{
 
-    await new Promise((resolve)=>{setTimeout(resolve,3000)})
-
-
-}
 
 export const addlocationofimage=async(image:string,addAlbum:string)=>{
     const existingfolder=await cloudinary.v2.api.create_folder(addAlbum);

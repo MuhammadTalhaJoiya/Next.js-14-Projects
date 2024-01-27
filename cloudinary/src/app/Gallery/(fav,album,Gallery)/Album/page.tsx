@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button"
-import Buttonupload from "../Gallery/Buttonupload";
+// import Buttonupload from "../Gallery/Buttonupload";
 import cloudinary from "cloudinary";
 import { v2 } from 'cloudinary';
 import CllImage from "../Gallery/Cllmage";
@@ -60,7 +60,7 @@ const Favourite=async()=>{
         <div className=" w-full p-5 h-full">
           <div className="flex justify-between p-5">
               <h1 className="text-2xl font-bold">Gallery</h1>
-              <Buttonupload />
+              {/* <Buttonupload /> */}
           </div>
           <div className="grid grid-cols-10 gap-4 ">
           {results.resources.map((val:any)=>{

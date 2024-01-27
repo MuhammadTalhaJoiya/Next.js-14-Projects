@@ -1,11 +1,12 @@
 import { Button } from "@/components/ui/button"
-import Buttonupload from "../Gallery/Buttonupload";
+// import Buttonupload from "../Gallery/Buttonupload";
 import cloudinary from "cloudinary";
 import CllImage from "../Gallery/Cllmage";
 import Link from "next/link";
 import ForceRefresh from "@/components/ui/force-refresh";
 import Sidebar from "../Gallery/sidebar";
-import Addtoalbum from "../Gallery/addtoalbum";
+// import Addtoalbum from "../Gallery/addtoalbum";
+import Buttonupload from "../Gallery/Buttonupload";
 const Favourite=async()=>{
     const results =await cloudinary.v2.search
   .expression('resource_type:image')
@@ -27,7 +28,7 @@ const Favourite=async()=>{
         <div className=" w-full p-5 h-full">
           <div className="flex justify-between p-5">
               <h1 className="text-2xl font-bold">Gallery</h1>
-              <Buttonupload />
+              <Buttonupload/>
           </div>
           <div className="grid grid-cols-10 gap-4 ">
           {results.resources.map((val:any)=>{
