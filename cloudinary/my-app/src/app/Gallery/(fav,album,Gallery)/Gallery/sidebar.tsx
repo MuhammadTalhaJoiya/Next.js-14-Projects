@@ -1,4 +1,4 @@
-import Buttonupload from "../Gallery/Buttonupload";
+import Buttonupload from "./Buttonupload";
 import Link from "next/link";
 import { Button } from "@/components/ui/button"
 

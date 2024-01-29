@@ -20,9 +20,11 @@ const Favourite=async()=>{
   console.log(results.resources.length)
   // console.log(results.resources.public_id)
     return(
+
       <div>
-      {/* <ForceRefresh/> */}
+        
       <div className="flex p-5">
+
       <Sidebar/>
 
         <div className=" w-full p-5 h-full">

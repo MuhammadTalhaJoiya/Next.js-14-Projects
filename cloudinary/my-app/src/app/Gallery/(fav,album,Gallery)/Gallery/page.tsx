@@ -23,7 +23,9 @@ const Favourite=async()=>{
   // console.log(results.resources.public_id)
   
     return(
-      <div className='bg-black text-white h-full'>
+      <div>
+        <ForceRefresh/>
+          <div className='bg-black text-white h-full'>
               <div className="flex ">
 
 <Sidebar/>
@@ -47,7 +49,11 @@ const Favourite=async()=>{
   </div>
 
       </div>
+      </div>
+      
         
     )
 }
 export default Favourite
+
+//revalidatepath,usetransition,

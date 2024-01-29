@@ -1,3 +1,4 @@
+'use client'
 import { Button } from "@/components/ui/button"
 import {addlocationofimage} from "./actions"
 import {
@@ -42,8 +43,8 @@ const Addtoalbum=(props:any)=>{
           
         </div>
         <DialogFooter>
-          <Button onClick={async()=>{
-            await addlocationofimage(image,addAlbum)
+          <Button onClick={()=>{
+            addlocationofimage(image,addAlbum)
             setOpen(false)
           }} type="submit">Save changes</Button>
         </DialogFooter>

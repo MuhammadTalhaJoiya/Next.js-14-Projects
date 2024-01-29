@@ -4,6 +4,7 @@ import { useEffect } from "react"
 
 const ForceRefresh=()=>{
     const router=useRouter()
+    
     useEffect(()=>{
         router.refresh()
     },[])

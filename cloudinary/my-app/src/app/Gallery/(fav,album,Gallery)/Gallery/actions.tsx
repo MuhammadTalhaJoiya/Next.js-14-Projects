@@ -1,16 +1,18 @@
 'use server'
 import cloudinary from "cloudinary";
+import { revalidatePath } from "next/cache";
 
-export const CloudinaryFav=async (publicid1:string,tagfav:boolean,path:string)=>{
+export const CloudinaryFav=async (publicid1:string,tagfav:boolean)=>{
     if(tagfav){
-        // console.log("remove")
+        console.log("remove")
         await cloudinary.v2.uploader.remove_tag('favourite',[publicid1])
-
+        revalidatePath("/Gallery/Favourite")
     }
     else{
         console.log("Add")
         await cloudinary.v2.uploader.add_tag('favourite',[publicid1])
         
+        revalidatePath("/Gallery/Favourite")
         
         
 
