@@ -1,18 +1,17 @@
 import { Button } from "@/components/ui/button"
-import Buttonupload from "../Gallery/Buttonupload";
 import cloudinary from "cloudinary";
 import { v2 } from 'cloudinary';
-import CllImage from "../Gallery/Cllmage";
 import Link from "next/link";
-import Sidebar from "./sidebar";
 // import Addtoalbum from "./addtoalbum";
 import ForceRefresh from "@/components/ui/force-refresh";
+import Sidebar from "../../Gallery/sidebar";
+import CllImage from "../../Gallery/Cllmage";
 // import { useEffect } from "react";
 // import { useRouter } from "next/navigation";
 
-const Favourite=async()=>{
+const FolImage=async(props:any)=>{
     const results =await cloudinary.v2.search
-  .expression('resource_type:image')
+  .expression(`resource_type:image AND folder=${props.params.folname}`)
   .sort_by('public_id','desc')
   .with_field('tags')
   .max_results()
@@ -29,12 +28,11 @@ const Favourite=async()=>{
               <div className="flex ">
 
 <Sidebar/>
+   {/* <hr /> */}
   <div className=" w-full p-5 h-full">
-  <div className="flex justify-between p-5">
-              <h1 className="text-2xl font-bold">Gallery</h1>
-              <Buttonupload/>
-          </div>
+    
       <div className="columns-3 space-y-2 gap-3 mx-auto p-3">
+        
         {results.resources.map((val:any)=>{
           return <CllImage  key={val.public_id} src={val.public_id} width={val.width} height={val.height} publicid={val.public_id} tag={val.tags[0]}  path="/" /> 
         })}
@@ -52,6 +50,6 @@ const Favourite=async()=>{
         
     )
 }
-export default Favourite
+export default FolImage
 
 //revalidatepath,usetransition,
