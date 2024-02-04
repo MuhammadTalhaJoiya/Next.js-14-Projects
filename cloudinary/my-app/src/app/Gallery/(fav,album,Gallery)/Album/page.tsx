@@ -1,15 +1,7 @@
-import { Button } from "@/components/ui/button"
-// import Buttonupload from "../Gallery/Buttonupload";
 import cloudinary from "cloudinary";
-import { v2 } from 'cloudinary';
-import CllImage from "../Gallery/Cllmage";
-import Link from "next/link";
 import Sidebar from "../Gallery/sidebar";
 import ALbumCard from "./AlbumCard";
-type albumtype={
-  name:string,
-  path:string
-}
+
 const Favourite=async()=>{
     const results =await cloudinary.v2.api.root_folders()
     console.log(results.folders)

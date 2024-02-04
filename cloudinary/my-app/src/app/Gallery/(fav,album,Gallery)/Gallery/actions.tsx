@@ -22,10 +22,15 @@ export const CloudinaryFav=async (publicid1:string,tagfav:boolean)=>{
 
 }
 
-
 export const addlocationofimage=async(image:string,addAlbum:string)=>{
+    
     const existingfolder=await cloudinary.v2.api.create_folder(addAlbum);
+    let parts=image.split('/')
+    if(parts.length>1){
+        parts=parts.slice(1)
+    }
+    const image_id=parts.join('/')
     await cloudinary.v2.uploader.rename(
-        image,`${addAlbum}/${image}`
+        image,`${addAlbum}/${image_id}`
     )
 }

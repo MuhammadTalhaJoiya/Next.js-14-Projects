@@ -24,7 +24,7 @@ const Favourite=async()=>{
   
     return(
       <div>
-        <ForceRefresh/>
+        {/* <ForceRefresh/> */}
           <div className='bg-black text-white h-full'>
               <div className="flex ">
 

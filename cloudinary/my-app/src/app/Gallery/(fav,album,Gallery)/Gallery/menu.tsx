@@ -6,7 +6,10 @@ import {
     DropdownMenuTrigger,
   } from "@/components/ui/dropdown-menu"
 import Addtoalbum from "./addtoalbum"
+import Link from "next/link"
+import { Pencil } from "lucide-react"
 const Menu=(props:any)=>{
+  // const [open,setOpen]=use
     return(
         <div className="absolute right-2 top-1">
                             <DropdownMenu>
@@ -15,7 +18,14 @@ const Menu=(props:any)=>{
 </svg>
 </DropdownMenuTrigger>
   <DropdownMenuContent>
-    <DropdownMenuLabel><Addtoalbum id={props.id}/></DropdownMenuLabel>
+    <DropdownMenuLabel>
+      <Addtoalbum id={props.id}/>
+      
+    </DropdownMenuLabel>
+    <DropdownMenuLabel className="flex mx-3 gap-2 cursor-pointer">
+      <Pencil/>
+      <Link href={`/Gallery/edit?publicid=${encodeURIComponent(props.id)}`} >edit</Link>
+    </DropdownMenuLabel>
     <DropdownMenuSeparator />
   </DropdownMenuContent>
 </DropdownMenu>

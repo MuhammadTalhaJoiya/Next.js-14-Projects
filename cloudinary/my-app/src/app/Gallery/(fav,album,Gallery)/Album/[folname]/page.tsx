@@ -1,13 +1,6 @@
-import { Button } from "@/components/ui/button"
 import cloudinary from "cloudinary";
-import { v2 } from 'cloudinary';
-import Link from "next/link";
-// import Addtoalbum from "./addtoalbum";
-import ForceRefresh from "@/components/ui/force-refresh";
 import Sidebar from "../../Gallery/sidebar";
 import CllImage from "../../Gallery/Cllmage";
-// import { useEffect } from "react";
-// import { useRouter } from "next/navigation";
 
 const FolImage=async(props:any)=>{
     const results =await cloudinary.v2.search
@@ -23,7 +16,7 @@ const FolImage=async(props:any)=>{
   
     return(
       <div>
-        <ForceRefresh/>
+        {/* <ForceRefresh/> */}
           <div className='bg-black text-white h-full'>
               <div className="flex ">
 
