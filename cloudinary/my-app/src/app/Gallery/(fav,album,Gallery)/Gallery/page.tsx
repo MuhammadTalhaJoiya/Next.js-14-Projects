@@ -7,16 +7,19 @@ import Link from "next/link";
 import Sidebar from "./sidebar";
 // import Addtoalbum from "./addtoalbum";
 import ForceRefresh from "@/components/ui/force-refresh";
+// import { SearchForm } from "./search-form";
+import { useRouter } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
+import { useCallback } from "react";
 // import { useEffect } from "react";
-// import { useRouter } from "next/navigation";
-
-const Favourite=async()=>{
+export default async function Favourite(){
+  const search=undefined
     const results =await cloudinary.v2.search
-  .expression('resource_type:image')
+    .expression(`resource_type:image${search ? ` AND tags=${search}` : ""}`)
   .sort_by('public_id','desc')
   .with_field('tags')
   .max_results()
-  .execute()
+  .execute() 
   // .then(result=>console.log(result));
   console.log(results.resources)
   console.log(results.resources.length)
@@ -32,6 +35,7 @@ const Favourite=async()=>{
   <div className=" w-full p-5 h-full">
   <div className="flex justify-between p-5">
               <h1 className="text-2xl font-bold">Gallery</h1>
+              {/* <SearchForm initialSearch={search} /> */}
               <Buttonupload/>
           </div>
       <div className="columns-3 space-y-2 gap-3 mx-auto p-3">
@@ -52,6 +56,5 @@ const Favourite=async()=>{
         
     )
 }
-export default Favourite
 
 //revalidatepath,usetransition,
