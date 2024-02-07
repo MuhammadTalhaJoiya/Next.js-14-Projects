@@ -38,7 +38,7 @@ export default async function Favourite(){
               {/* <SearchForm initialSearch={search} /> */}
               <Buttonupload/>
           </div>
-      <div className="columns-3 space-y-2 gap-3 mx-auto p-3">
+      <div className="columns-3 space-y-2 gap-3 p-3">
         {results.resources.map((val:any)=>{
           return <CllImage  key={val.public_id} src={val.public_id} width={val.width} height={val.height} publicid={val.public_id} tag={val.tags[0]}  path="/" /> 
         })}

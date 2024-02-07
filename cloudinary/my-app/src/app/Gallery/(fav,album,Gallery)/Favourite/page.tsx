@@ -18,7 +18,7 @@ const Favourite=async()=>{
   // console.log(results.resources.public_id)
     return(
 
-      <div>
+      <div className="bg-black text-white h-full">
         
       <div className="flex p-5">
 
@@ -29,7 +29,7 @@ const Favourite=async()=>{
               <h1 className="text-2xl font-bold">Gallery</h1>
               <Buttonupload/>
           </div>
-          <div className="grid grid-cols-10 gap-4 ">
+          <div className="columns-3 space-y-2 gap-3 mx-auto p-3">
           {results.resources.map((val:any)=>{
             if(val.tags[0]==='favourite'){
                 return <CllImage key={val.public_id} src={val.public_id} width={val.width} height={val.height} publicid={val.public_id} tag={val.tags[0]} path="/Gallery/Favourite"/> 

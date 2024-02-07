@@ -10,12 +10,14 @@ const CllImage =(props:any )=>{
     
     return (
         <div>
-                <div className='relative break-inside-auto""break-inside-auto'>
+                <div className='relative break-inside-auto'>
 
                     <div >
                         <CldImage
                         className="rounded-md"
-                        {...props}
+                        height={props.height}
+                        width={600}
+                        src={props.src}
                         alt="image
                         "
                         />

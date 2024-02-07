@@ -36,7 +36,7 @@ const EditGenPic=(props:any)=>{
           <button onClick={gray} className="bg-black text-white p-4 rounded-md cursor-pointer m-5">Grayscale</button>
           <button onClick={pixelete} className="bg-black text-white p-4 rounded-md cursor-pointer m-5">Pixelete</button>
           <button onClick={removeback} className="bg-black text-white p-4 rounded-md cursor-pointer m-5">removeBackground</button>
-          <div className="flex gap-2">
+          <div className="flex gap-2 ml-6 mt-6">
           <CldImage
             width="400"
             height="400"
