@@ -25,17 +25,17 @@ const EditGenPic=(props:any)=>{
     }
     console.log(props)
     return(
-        <div>
+        <div className="bg-black text-white h-full">
         <div className="flex">
         <Sidebar/>
         <div>
-          <h1 className="p-8 text-2xl font-bold w-full h-10 flex items-center ">Edit {props.searchParams.publicid}</h1>
-          <button onClick={changestatetoremove} className="bg-black text-white p-4 rounded-md cursor-pointer m-5">Remove</button>
+          <h1 className="p-8 text-2xl font-bold w-full h-10 flex items-center ">Edit the Image</h1>
+          <button onClick={changestatetoremove} className="bg-black text-white border border-white p-4 rounded-md cursor-pointer m-5">Remove</button>
           {/* <button onClick={GenAI} className="bg-black text-white p-4 rounded-md cursor-pointer m-5">GenAI</button> */}
-          <button onClick={blur} className="bg-black text-white p-4 rounded-md cursor-pointer m-5">Blur</button>
-          <button onClick={gray} className="bg-black text-white p-4 rounded-md cursor-pointer m-5">Grayscale</button>
-          <button onClick={pixelete} className="bg-black text-white p-4 rounded-md cursor-pointer m-5">Pixelete</button>
-          <button onClick={removeback} className="bg-black text-white p-4 rounded-md cursor-pointer m-5">removeBackground</button>
+          <button onClick={blur} className="bg-black text-white border border-white p-4 rounded-md cursor-pointer m-5">Blur</button>
+          <button onClick={gray} className="bg-black text-white border border-white p-4 rounded-md cursor-pointer m-5">Grayscale</button>
+          <button onClick={pixelete} className="bg-black border-white border text-white p-4 rounded-md cursor-pointer m-5">Pixelete</button>
+          <button onClick={removeback} className="bg-black border-white border text-white p-4 rounded-md cursor-pointer m-5">removeBackground</button>
           <div className="flex gap-2 ml-6 mt-6">
           <CldImage
             width="400"
